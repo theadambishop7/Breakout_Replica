@@ -10,7 +10,7 @@ class Ball(Turtle):
         self.shape("circle")
         self.pu()
         self.x_move = 10
-        self.y_move = 10
+        self.y_move = 12
         self.ball_speed = 0.04
         self.goto(STARTING_POSITION)
 
@@ -28,7 +28,7 @@ class Ball(Turtle):
     def reset_position(self):
         self.goto(STARTING_POSITION)
         self.x_move = 10
-        self.y_move = 10
+        self.y_move = 12
 
     def miss(self):
         self.reset_position()

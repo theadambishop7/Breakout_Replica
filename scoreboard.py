@@ -19,15 +19,15 @@ class Scoreboard(Turtle):
         self.pd()
         self.write(f"Score: {self.current_score}", font=SCOREBOARD_FONT)
         self.pu()
-        self.goto(80, 270)
+        self.goto(60, 270)
         self.pd()
         self.write("Lives: ", font=SCOREBOARD_FONT)
         self.pu()
-        x = self.xcor() + 100
+        x = self.xcor() + 92
         for _ in range(self.lives):
-            self.goto(x, 270)
-            self.write("X", font=SCOREBOARD_FONT)
-            x += 20
+            self.goto(x, 267)
+            self.write("❤️", font=SCOREBOARD_FONT)
+            x += 30
         self.hideturtle()
 
     def score(self):
@@ -40,4 +40,9 @@ class Scoreboard(Turtle):
 
     def game_over(self, condition):
         self.goto(0, 0)
-        self.write(f"Game Over. {condition}", align="center", font=SCOREBOARD_FONT)
+        if self.lives == 0:
+            final_score = self.current_score
+        else:
+            final_score = self.current_score * self.lives
+        self.write(f"Game Over. {condition}\nFinal Score: {final_score}", align="center", font=SCOREBOARD_FONT)
+
